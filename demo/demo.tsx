@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Card from "../src/Card";
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
     body {
@@ -12,9 +12,18 @@ const GlobalStyles = createGlobalStyle`
     }
 `;
 
+const StyledDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+`;
+
 ReactDOM.render(<>
         <GlobalStyles/>
 
-        <div><Card>.fd-card</Card></div>
+        <div><Card><StyledDiv>.fd-card</StyledDiv></Card></div>
+        <div><Card className="longread"><StyledDiv>.fd-card.longread</StyledDiv></Card></div>
     </>,
     document.getElementById('root'));
+

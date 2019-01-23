@@ -5,3 +5,9 @@ exports[`Card renders card correctly 1`] = `
   className="fd-card"
 />
 `;
+
+exports[`Card renders longread card correctly 1`] = `
+<div
+  className="fd-card longread"
+/>
+`;

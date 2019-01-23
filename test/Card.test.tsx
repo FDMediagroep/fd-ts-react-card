@@ -7,4 +7,9 @@ describe('Card', () => {
         let button = TestRenderer.create(<Card/>);
         expect(button.toJSON()).toMatchSnapshot();
     });
+
+    test('renders longread card correctly', () => {
+        let button = TestRenderer.create(<Card className="longread"/>);
+        expect(button.toJSON()).toMatchSnapshot();
+    });
 });
