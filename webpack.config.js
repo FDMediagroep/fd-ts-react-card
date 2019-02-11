@@ -4,11 +4,13 @@
 
 const webpack = require("webpack");
 const path = require('path');
+const NODE_ENV = JSON.stringify(process.env.NODE_ENV ? process.env.NODE_ENV : 'development');
+const devtool = NODE_ENV == '"development"' ? 'source-map' : undefined;
 
 console.info('process.env.NODE_ENV', JSON.stringify(process.env.NODE_ENV));
 
 module.exports = {
-    // devtool: "source-map",
+    devtool,
     entry: {
         "card": ["./src/Card.tsx"]
     },
@@ -24,11 +26,7 @@ module.exports = {
         publicPath : ''
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx']/*,
-        alias: {
-            'react': 'preact-compat',
-            'react-dom': 'preact-compat'
-        }*/
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
     },
     externals: {
         'react': 'react',
