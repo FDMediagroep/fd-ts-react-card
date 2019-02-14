@@ -6,6 +6,7 @@ declare type CardStyle = {
 export interface Props {
     className?: string;
     cardStyle: CardTypes;
+    [x: string]: any;
 }
 export declare const cardStyles: CardStyle;
 export default class Card extends PureComponent<Props, any> {
