@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import { createGlobalStyle } from "styled-components";
 
-type CardTypes = 'article' | 'default' | 'longread' | 'persoonlijk';
+export type CardTypes = 'article' | 'default' | 'longread' | 'persoonlijk';
 
 type CardStyle = {
     [P in CardTypes]?: any

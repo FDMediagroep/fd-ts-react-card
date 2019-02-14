@@ -20,3 +20,10 @@ exports[`Card renders longread card correctly 1`] = `
   className="fd-card longread"
 />
 `;
+
+exports[`Card renders persoonlijk card correctly 1`] = `
+<div
+  cardStyle="persoonlijk"
+  className="fd-card persoonlijk"
+/>
+`;
