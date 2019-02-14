@@ -1,13 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Card renders article card correctly 1`] = `
+<div
+  cardStyle="article"
+  className="fd-card article"
+/>
+`;
+
 exports[`Card renders card correctly 1`] = `
 <div
-  className="fd-card"
+  cardStyle="default"
+  className="fd-card default"
 />
 `;
 
 exports[`Card renders longread card correctly 1`] = `
 <div
+  cardStyle="longread"
   className="fd-card longread"
 />
 `;
