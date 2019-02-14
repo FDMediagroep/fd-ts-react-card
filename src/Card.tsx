@@ -52,22 +52,6 @@ export default class Card extends PureComponent<Props, any> {
     }
 }
 
-const GlobalStyles = createGlobalStyle`
-    .fd-card {
-        background: #ffeadb;
-        &.article {
-            background: rgba(0,0,0,0.04);
-        }
-        box-shadow: 0 2px 0.2px rgba(0,0,0,0.1);
-        position: relative;
-        &.longread {
-            box-shadow: inset 2px 0 0 0 #f05031, 0 2px 0.2px rgba(0,0,0,0.1)
-        }
-    }
-`;
-
-export {GlobalStyles as CardStyle};
-
 export function getCardStyle(textStyle: CardTypes) {
     return cardStyles[textStyle];
 }
