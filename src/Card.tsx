@@ -69,3 +69,5 @@ export function getAllCardStyles(filter?: CardTypes[]) {
     }
     return result;
 }
+
+export const CardStyle = getAllCardStyles();

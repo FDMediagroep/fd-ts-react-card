@@ -14,4 +14,5 @@ export default class Card extends PureComponent<Props, any> {
 }
 export declare function getCardStyle(textStyle: CardTypes): any;
 export declare function getAllCardStyles(filter?: CardTypes[]): any;
+export declare const CardStyle: any;
 export {};
