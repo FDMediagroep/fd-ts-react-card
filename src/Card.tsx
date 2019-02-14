@@ -10,6 +10,7 @@ type CardStyle = {
 export interface Props {
     className?: string;
     cardStyle: CardTypes;
+    [x: string]: any;
 }
 
 export const cardStyles: CardStyle = {
