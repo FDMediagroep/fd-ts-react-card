@@ -29,7 +29,6 @@ export const cardStyles: CardStyle = {
     longread: createGlobalStyle`
     .fd-card.longread {
         background: #ffeadb;
-        box-shadow: 0 2px 0.2px rgba(0,0,0,0.1);
         position: relative;
         box-shadow: inset 2px 0 0 0 #f05031, 0 2px 0.2px rgba(0,0,0,0.1)
     }`,

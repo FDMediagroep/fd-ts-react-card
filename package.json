@@ -1,6 +1,6 @@
 {
   "name": "@fdmg/fd-card",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "FD-themed card",
   "types": "dist/Card.d.ts",
   "main": "dist/card.js",
