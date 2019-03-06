@@ -4,12 +4,22 @@ import React from 'react';
 
 describe('Card', () => {
     test('renders card correctly', () => {
-        let button = TestRenderer.create(<Card/>);
-        expect(button.toJSON()).toMatchSnapshot();
+        let card = TestRenderer.create(<Card cardStyle='default'/>);
+        expect(card.toJSON()).toMatchSnapshot();
     });
 
     test('renders longread card correctly', () => {
-        let button = TestRenderer.create(<Card className="longread"/>);
-        expect(button.toJSON()).toMatchSnapshot();
+        let card = TestRenderer.create(<Card cardStyle='longread'/>);
+        expect(card.toJSON()).toMatchSnapshot();
+    });
+
+    test('renders article card correctly', () => {
+        let card = TestRenderer.create(<Card cardStyle='article'/>);
+        expect(card.toJSON()).toMatchSnapshot();
+    });
+
+    test('renders persoonlijk card correctly', () => {
+        let card = TestRenderer.create(<Card cardStyle='persoonlijk'/>);
+        expect(card.toJSON()).toMatchSnapshot();
     });
 });
