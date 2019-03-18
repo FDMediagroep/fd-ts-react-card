@@ -53,6 +53,7 @@ ReactDOM.render(<>
     <GlobalStyles/>
 
     <div><Card cardStyle="persoonlijk"><StyledDiv>.fd-card.persoonlijk</StyledDiv></Card></div>
+    <div><Card cardStyle="persoonlijk longread"><StyledDiv>.fd-card.persoonlijk.longread</StyledDiv></Card></div>
 </>,
 document.querySelector('.persoonlijk aside'));
 

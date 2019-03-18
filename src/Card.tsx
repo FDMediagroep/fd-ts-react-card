@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import { createGlobalStyle } from "styled-components";
 
-export type CardTypes = 'article' | 'default' | 'longread' | 'persoonlijk';
+export type CardTypes = 'article' | 'default' | 'longread' | 'persoonlijk' | 'persoonlijk longread';
 
 type CardStyle = {
     [P in CardTypes]?: any
@@ -14,28 +14,34 @@ export interface Props {
 }
 
 export const cardStyles: CardStyle = {
-    article: createGlobalStyle`
+    'article': createGlobalStyle`
     .fd-card.article {
         background: rgba(0,0,0,0.04);
         box-shadow: 0 2px 0.2px rgba(0,0,0,0.1);
         position: relative;
     }`,
-    default: createGlobalStyle`
+    'default': createGlobalStyle`
     .fd-card {
         background: #ffeadb;
         box-shadow: 0 2px 0.2px rgba(0,0,0,0.1);
         position: relative;
     }`,
-    longread: createGlobalStyle`
+    'longread': createGlobalStyle`
     .fd-card.longread {
         background: #ffeadb;
         position: relative;
         box-shadow: inset 2px 0 0 0 #f05031, 0 2px 0.2px rgba(0,0,0,0.1)
     }`,
-    persoonlijk: createGlobalStyle`
+    'persoonlijk': createGlobalStyle`
     .fd-card.persoonlijk {
         background: rgba(0,0,0,0.04);
         box-shadow: 0 2px 0.2px rgba(0,0,0,0.1);
+        position: relative;
+    }`,
+    'persoonlijk longread': createGlobalStyle`
+    .fd-card.persoonlijk.longread {
+        background: rgba(0,0,0,0.04);
+        box-shadow: inset 2px 0 0 0 #f05031, 0 2px 0.2px rgba(0,0,0,0.1);
         position: relative;
     }`
 };

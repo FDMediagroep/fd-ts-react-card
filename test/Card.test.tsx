@@ -22,4 +22,9 @@ describe('Card', () => {
         let card = TestRenderer.create(<Card cardStyle='persoonlijk'/>);
         expect(card.toJSON()).toMatchSnapshot();
     });
+
+    test('renders persoonlijk longread card correctly', () => {
+        let card = TestRenderer.create(<Card cardStyle='persoonlijk longread'/>);
+        expect(card.toJSON()).toMatchSnapshot();
+    });
 });

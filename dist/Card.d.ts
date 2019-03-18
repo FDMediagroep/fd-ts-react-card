@@ -1,5 +1,5 @@
 import { PureComponent } from "react";
-export declare type CardTypes = 'article' | 'default' | 'longread' | 'persoonlijk';
+export declare type CardTypes = 'article' | 'default' | 'longread' | 'persoonlijk' | 'persoonlijk longread';
 declare type CardStyle = {
     [P in CardTypes]?: any;
 };
