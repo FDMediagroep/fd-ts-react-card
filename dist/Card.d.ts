@@ -1,4 +1,3 @@
-import { PureComponent } from "react";
 export declare type CardTypes = 'article' | 'default' | 'longread' | 'persoonlijk' | 'persoonlijk longread';
 declare type CardStyle = {
     [P in CardTypes]?: any;
@@ -9,9 +8,7 @@ export interface Props {
     [x: string]: any;
 }
 export declare const cardStyles: CardStyle;
-export default class Card extends PureComponent<Props, any> {
-    render(): JSX.Element;
-}
+export default function Card(props: Props): JSX.Element;
 export declare function getCardStyle(textStyle: CardTypes): any;
 export declare function getAllCardStyles(filter?: CardTypes[]): any;
 export declare const CardStyle: any;

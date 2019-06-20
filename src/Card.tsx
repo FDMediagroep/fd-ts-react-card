@@ -14,47 +14,45 @@ export interface Props {
 }
 
 export const cardStyles: CardStyle = {
-    'article': css`
-    .fd-card.article {
-        background: rgba(0,0,0,0.04);
-        box-shadow: 0 2px 0.2px rgba(0,0,0,0.1);
-        position: relative;
-    }`,
-    'default': css`
-    .fd-card {
-        background: #ffeadb;
-        box-shadow: 0 2px 0.2px rgba(0,0,0,0.1);
-        position: relative;
-    }`,
-    'longread': css`
-    .fd-card.longread {
-        background: #ffeadb;
-        position: relative;
-        box-shadow: inset 2px 0 0 0 #f05031, 0 2px 0.2px rgba(0,0,0,0.1)
-    }`,
-    'persoonlijk': css`
-    .fd-card.persoonlijk {
-        background: rgba(0,0,0,0.04);
-        box-shadow: 0 2px 0.2px rgba(0,0,0,0.1);
-        position: relative;
-    }`,
-    'persoonlijk longread': css`
-    .fd-card.persoonlijk.longread {
-        background: rgba(0,0,0,0.04);
-        box-shadow: inset 2px 0 0 0 #f05031, 0 2px 0.2px rgba(0,0,0,0.1);
-        position: relative;
-    }`
+    'article':
+css`.fd-card.article {
+    background: rgba(0,0,0,0.04);
+    box-shadow: 0 2px 0.2px rgba(0,0,0,0.1);
+    position: relative;
+}`,
+    'default':
+css`.fd-card {
+    background: #ffeadb;
+    box-shadow: 0 2px 0.2px rgba(0,0,0,0.1);
+    position: relative;
+}`,
+    'longread':
+css`.fd-card.longread {
+    background: #ffeadb;
+    position: relative;
+    box-shadow: inset 2px 0 0 0 #f05031, 0 2px 0.2px rgba(0,0,0,0.1)
+}`,
+    'persoonlijk':
+css`.fd-card.persoonlijk {
+    background: rgba(0,0,0,0.04);
+    box-shadow: 0 2px 0.2px rgba(0,0,0,0.1);
+    position: relative;
+}`,
+    'persoonlijk longread':
+css`.fd-card.persoonlijk.longread {
+    background: rgba(0,0,0,0.04);
+    box-shadow: inset 2px 0 0 0 #f05031, 0 2px 0.2px rgba(0,0,0,0.1);
+    position: relative;
+}`
 };
 
-export default class Card extends PureComponent<Props, any> {
-    render() {
-        return (
-            <>
-                {React.createElement(createGlobalStyle(cardStyles[this.props.cardStyle]), {}, null)}
-                <div {...this.props} className={`fd-card${this.props.className ? ` ${this.props.className}` : ''}${this.props.cardStyle ? ` ${this.props.cardStyle}` : ''}`}>{this.props.children}</div>
-            </>
-        );
-    }
+export default function Card(props: Props) {
+    return (
+        <>
+            {React.createElement(createGlobalStyle(cardStyles[props.cardStyle]), {}, null)}
+            <div {...props} className={`fd-card${props.className ? ` ${props.className}` : ''}${props.cardStyle ? ` ${props.cardStyle}` : ''}`}>{props.children}</div>
+        </>
+    );
 }
 
 export function getCardStyle(textStyle: CardTypes) {
