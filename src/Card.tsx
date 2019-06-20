@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, css } from "styled-components";
 
 export type CardTypes = 'article' | 'default' | 'longread' | 'persoonlijk' | 'persoonlijk longread';
 
@@ -14,31 +14,31 @@ export interface Props {
 }
 
 export const cardStyles: CardStyle = {
-    'article': createGlobalStyle`
+    'article': css`
     .fd-card.article {
         background: rgba(0,0,0,0.04);
         box-shadow: 0 2px 0.2px rgba(0,0,0,0.1);
         position: relative;
     }`,
-    'default': createGlobalStyle`
+    'default': css`
     .fd-card {
         background: #ffeadb;
         box-shadow: 0 2px 0.2px rgba(0,0,0,0.1);
         position: relative;
     }`,
-    'longread': createGlobalStyle`
+    'longread': css`
     .fd-card.longread {
         background: #ffeadb;
         position: relative;
         box-shadow: inset 2px 0 0 0 #f05031, 0 2px 0.2px rgba(0,0,0,0.1)
     }`,
-    'persoonlijk': createGlobalStyle`
+    'persoonlijk': css`
     .fd-card.persoonlijk {
         background: rgba(0,0,0,0.04);
         box-shadow: 0 2px 0.2px rgba(0,0,0,0.1);
         position: relative;
     }`,
-    'persoonlijk longread': createGlobalStyle`
+    'persoonlijk longread': css`
     .fd-card.persoonlijk.longread {
         background: rgba(0,0,0,0.04);
         box-shadow: inset 2px 0 0 0 #f05031, 0 2px 0.2px rgba(0,0,0,0.1);
@@ -50,7 +50,7 @@ export default class Card extends PureComponent<Props, any> {
     render() {
         return (
             <>
-                {React.createElement(cardStyles[this.props.cardStyle] as any, {}, null)}
+                {React.createElement(createGlobalStyle(cardStyles[this.props.cardStyle]), {}, null)}
                 <div {...this.props} className={`fd-card${this.props.className ? ` ${this.props.className}` : ''}${this.props.cardStyle ? ` ${this.props.cardStyle}` : ''}`}>{this.props.children}</div>
             </>
         );
@@ -67,9 +67,9 @@ export function getAllCardStyles(filter?: CardTypes[]) {
     for (const key in tmp) {
         if (filter && filter.indexOf(key as any) === -1) { continue; }
         if (result) {
-            result = createGlobalStyle`${result.globalStyle.rules}${tmp[key].globalStyle.rules}`;
+            result = css`${result}${tmp[key]}`;
         } else {
-            result = createGlobalStyle`${tmp[key].globalStyle.rules}`;
+            result = css`${tmp[key]}`;
         }
     }
     return result;
